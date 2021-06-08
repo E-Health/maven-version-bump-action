@@ -15,7 +15,7 @@ inputs:
   pom-path:
     description: 'The relative location of your pom.xml file'
     required: true
-    default: '.'
+    default: './pom.xml'
   version-prefix:
     description: 'The prefix for version tag'
     required: true
