@@ -15,7 +15,11 @@ inputs:
   pom-path:
     description: 'The relative location of your pom.xml file'
     required: true
-    default: '.'
+    default: './pom.xml'
+  version-prefix:
+    description: 'The prefix for version tag'
+    required: true
+    default: ''
   git-email:
     description: 'The email address used to create the version bump commit with.'
     required: true
@@ -39,6 +43,7 @@ runs:
         EMAIL: ${{ inputs.git-email }}
         NAME: ${{ inputs.git-username }}
         POMPATH: ${{ inputs.pom-path }}
+        PREFIX: ${{ inputs.version-prefix }}
       run: ${{github.action_path}}/version-bump.sh
       shell: bash
     - name: Set outputs
