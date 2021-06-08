@@ -8,6 +8,11 @@ If true, it will use Maven to bump your pom's version.
 For example, a `#minor` update to version `1.3.9` will result in the version changing to `1.4.0`.
 The change will then be committed.
 
+## CHANGES
+
+* POMPATH should include pom filename
+*  -DgenerateBackupPoms=false -DprocessAllModules --file "${POMPATH}" added to mvn
+* support prefix for version TAG
 ## Sample Usage
 
 ```yaml
@@ -40,6 +45,7 @@ jobs:
 * `git-email`: The email address each commit should be associated with. Defaults to a github provided noreply address
 * `git-username`: The GitHub username each commit should be associated with. Defaults to `github-actions[bot]`
 * `pom-path`: The path within your directory the pom.xml you intended to change is located.
+* `version-prefix`: The prefix for the version tag.
 
 ## Outputs
 
