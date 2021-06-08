@@ -16,9 +16,12 @@ The change will then be committed.
 ## Sample Usage
 
 ```yaml
-name: Clojure Version Bump
+name: Maven Version Bump
 
-on: [push]
+on:
+  push:
+    branches:
+      - "release/**"
 
 jobs:
   build:
@@ -31,7 +34,7 @@ jobs:
 
     - name: Bump Version
       id: bump
-      uses: nnichols/maven-version-bump-action@v3
+      uses: E-Health/maven-version-bump-action@v4
       with:
         github-token: ${{ secrets.github_token }}
 
@@ -44,7 +47,7 @@ jobs:
 * `github-token`: The only required argument. Can either be the default token, as seen above, or a personal access token with write access to the repository
 * `git-email`: The email address each commit should be associated with. Defaults to a github provided noreply address
 * `git-username`: The GitHub username each commit should be associated with. Defaults to `github-actions[bot]`
-* `pom-path`: The path within your directory the pom.xml you intended to change is located.
+* `pom-path`: The full path to the root pom.xml.
 * `version-prefix`: The prefix for the version tag.
 
 ## Outputs
