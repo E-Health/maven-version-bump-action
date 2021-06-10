@@ -34,7 +34,7 @@ jobs:
 
     - name: Bump Version
       id: bump
-      uses: E-Health/maven-version-bump-action@v4.2
+      uses: E-Health/maven-version-bump-action@v4.3
       with:
         github-token: ${{ secrets.github_token }}
 
